@@ -1,0 +1,150 @@
+/* SlideComponent.css 최종 코드 */
+
+.sp1-sec1 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60rem;
+    padding: 3rem;
+    overflow: hidden;
+}
+
+.sp1-sec1 > div:first-child {
+    text-align: center;
+    font-size: 3.2rem;
+    font-weight: 400;
+    color: #FF4081;
+    margin-bottom: 20px;
+}
+
+.sp1-sec1-img-Box-bg {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 1200px;
+    height: 500px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.sp1-sec1-img-Box {
+    display: flex;
+    position: absolute;
+    height: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sp1-sec1-img-Box > li {
+    width: calc(1200px / 3);
+    min-width: 400px;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    position: relative;
+}
+
+.sp1-sec1-img-Box > li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+/* 슬라이드 버튼 */
+.sp-slide-left,
+.sp-slide-right {
+    position: absolute;
+    width: 30px; 
+    height: 30px;
+    background: transparent; 
+    border: none;
+    cursor: pointer;
+    z-index: 100; 
+    padding: 0;
+}
+
+.sp-slide-left img,
+.sp-slide-right img {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+}
+
+.sp-slide-left {
+    /* 뷰포트 밖으로 밀어내기: -70px 위치 */
+    left:0; 
+    top: 50%;
+    transform: translateY(-50%);
+}
+.sp-slide-right {
+    /* 뷰포트 밖으로 밀어내기: 오른쪽 경계에서 -70px 위치 */
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .sp1-sec1-img-Box-bg {
+        width: 100%; 
+        max-width: 800px; 
+    }
+    .sp1-sec1-img-Box > li {
+        width: calc(800px / 2); 
+        min-width: 350px;
+    }
+    .sp-slide-left { 
+        left: 0; 
+        z-index: 100;
+    }
+    .sp-slide-right { 
+        right: 0; 
+        z-index: 100;
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    .sp1-sec1-img-Box-bg {
+        width: 100%;
+        height: 300px;
+        max-width: 100%;
+    }
+    .sp1-sec1-img-Box > li {
+        width: 100vw; 
+        min-width: 300px;
+        padding: 10px;
+    }
+    .sp-slide-left { left: 0; }
+    .sp-slide-right { right: 0; }
+}
+
+/* 페이지 인디케이터 스타일 */
+.sp-page-indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    z-index: 101;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 반응형 - 모바일에서 인디케이터 크기 조정 */
+@media (max-width: 768px) {
+    .sp-page-indicator {
+        font-size: 1.2rem;
+        padding: 6px 16px;
+        bottom: 10px;
+    }
+}

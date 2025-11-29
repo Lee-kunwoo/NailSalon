@@ -1,0 +1,181 @@
+/* 동영상과 배경 변경 */
+#bgChange.hide {
+    opacity: 0;
+}
+
+#bgChange {
+    display: flex;
+    justify-content: center;
+    padding: 100px 20px;
+    min-height: 100vh;
+    background-color: #222231;
+    color: #eee;
+    transition: 1.5s;
+    opacity: 1;
+    margin-top: 20px;
+}
+
+#bgChange > div {
+    width: 100%;
+    max-width: 1400px;
+}
+
+#bgChange.on {
+    background-color: #fafafc;
+    color: rgb(255, 255, 255);
+}
+
+/* 텍스트 스타일 - 초기 좌측 정렬 */
+.sec4Text {
+    text-align: left;
+    padding-left: 50px;
+    margin-bottom: 50px;
+    transition: all 1.5s ease;
+    width: 100%;
+}
+
+/* 스크롤 후 중앙 정렬 */
+.sec4Text.centered {
+    text-align: center;
+    padding-left: 0;
+}
+
+.sec4Text > p:nth-child(1) {
+    font-size: 51px;
+    font-weight: bolder;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    word-break: keep-all;
+}
+
+.sec4Text > p:nth-child(2) {
+    margin-bottom: 20px;
+}
+
+.sec4Text > p:last-child {
+    margin-bottom: 50px;
+}
+
+.sec4Text > p:not(:first-child) {
+    font-size: 21px;
+    font-weight: 500;
+}
+
+/* 동영상 */
+#movie {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+#movie video {
+    width: 900px;
+    height: 400px;
+    max-width: 100%;
+    display: block;
+    transition: all 2s;
+}
+
+#movie video.big {
+    animation: bb 3s 0.5s both;
+}
+
+@keyframes bb {
+    from {
+        width: 1200px;
+        height: 1000px;
+    }
+    to {
+        width: 1400px;
+        height: 1200px;
+    }
+}
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    #bgChange {
+        padding: 80px 30px;
+        margin-top: 15px;
+        min-height: 80vh;
+    }
+
+    .sec4Text {
+        padding-left: 30px;
+    }
+
+    .sec4Text.centered {
+        padding-left: 0;
+    }
+
+    .sec4Text > p:nth-child(1) {
+        font-size: 38px;
+        margin-bottom: 15px;
+    }
+
+    .sec4Text > p:not(:first-child) {
+        font-size: 17px;
+    }
+
+    #movie video {
+        width: 100%;
+        max-width: 700px;
+        height: auto;
+    }
+
+    /* Tablet용 애니메이션 재정의 */
+    @keyframes bb {
+        from {
+            width: 700px;
+            height: auto;
+        }
+        to {
+            width: 800px;
+            height: auto;
+        }
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    #bgChange {
+        padding: 60px 20px;
+        margin-top: 10px;
+        min-height: 70vh;
+    }
+
+    .sec4Text {
+        padding-left: 20px;
+    }
+
+    .sec4Text.centered {
+        padding-left: 0;
+    }
+
+    .sec4Text > p:nth-child(1) {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .sec4Text > p:not(:first-child) {
+        font-size: 14px;
+    }
+
+    #movie video {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+    }
+
+    /* Mobile용 애니메이션 재정의 */
+    @keyframes bb {
+        from {
+            width: 350px;
+            height: auto;
+        }
+        to {
+            width: 400px;
+            height: auto;
+        }
+    }
+}

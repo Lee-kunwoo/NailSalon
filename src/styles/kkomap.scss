@@ -1,0 +1,68 @@
+$bg-color: #1e1e33; // 다크 네이비
+$text-color: #FFFFFF; // 화이트
+$accent-color: #FF4081; // 핫핑크
+$font-family: 'Batang', 'Garamond';
+$border-radius: 5px;
+
+h2 {
+  font-size: 1.8em;
+  margin: 50px 0;
+  color: $accent-color; // 제목 색상 (진한 회색)
+  text-align: center;
+  font-family: $font-family;
+}
+
+#map { // 지도 영역을 감싸는 컨테이너
+  width: 700px;
+  height: 600px;
+  margin: auto;
+  border: 1px solid #ddd; // 연한 회색 테두리
+  border-radius: 8px; // 둥근 테두리
+  overflow: hidden; // 내용물이 테두리 밖으로 넘치지 않도록
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); // 그림자 효과
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f9f9f9; // 연한 회색 배경 (선택 사항)
+  text-align: center; // 내부 내용 중앙 정렬 (선택 사항)
+
+  > div { // #map 하위의 div (예: ref={mapRef}로 연결된 요소)
+    width: 100%; // 부모 컨테이너에 꽉 채우도록 설정
+    height: 600px; // 고정 높이 (React 코드에서 style로 지정한 값과 동일)
+  }
+}
+
+/* 반응형 디자인 (1024px 이하) */
+@media (max-width: 1024px) {
+  h2 {
+    font-size: 1.6em;
+    margin: 40px 0;
+  }
+
+  #map {
+    width: 90%;
+    height: 500px;
+    padding: 10px;
+
+    > div {
+      height: 500px;
+    }
+  }
+}
+
+/* 반응형 디자인 (768px 이하) */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.4em;
+    margin: 30px 0;
+  }
+
+  #map {
+    width: 100%;
+    height: 400px;
+    padding: 5px;
+
+    > div {
+      height: 400px;
+    }
+  }
+}

@@ -1,0 +1,197 @@
+        $bg-color: #1e1e33; // 다크 네이비
+        $text-color: #FFFFFF; // 화이트
+        $accent-color: #FF4081; // 핫핑크
+        $font-family: 'Batang', 'Garamond';
+        $border-radius : 5px;
+
+
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        body{
+        background-color:$bg-color;
+        width: 100vw;
+        margin: auto;       
+        overflow-x: hidden; /* 가로 스크롤 비활성화 */
+        overflow-y: auto;   /* 세로 스크롤 활성화 */ 
+        }
+        body.no-scroll {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        }
+        .headoutbox {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #3b3b83; 
+        margin-bottom: 0;   
+        padding: 0 20px;
+        }
+
+        /* 로고 */
+        .logo {
+        width: 80px;
+        height: 80px;
+        background: no-repeat center center;
+        background-size: cover;
+        background: cover;
+        margin-left: 50px;
+        border-radius: $border-radius;
+        }
+
+        /* 로고 텍스트 */
+        .topLogo {
+        width: 20%;    
+        color: white;  /* ✅ $text-color 변수 사용 가능 */
+        line-height: 100px; 
+        font-size: 30px; 
+        text-align: center;
+        font-family: $font-family;
+        margin-left: 0;
+        }
+        /* 메세지 텍스트 */
+        .message {
+        width: 60%;  /* ✅ 너비 수정 */
+        color: white;  
+        font-size: 30px;     
+        text-align: right;  /* ✅ 텍스트를 오른쪽 정렬 */
+        margin-right: 100px;
+        font-family: $font-family;
+        }
+        .Nav{
+        background-color:#242449;
+        height: 100px; 
+        margin: 0;   
+        ul{
+        list-style: none;
+        display: flex;
+        height: 100%;
+        align-items: center;
+        font-size: 30px;
+        margin: 0;
+        margin-left: 60px;
+        margin-right: 60px;
+        font-family: $font-family;        
+        li{
+        margin-right: 50px;
+        padding: 5px;
+        border-radius:$border-radius;
+        color: $accent-color;
+        .home{                
+        background-color: $accent-color;
+        color: #FFFFFF;
+        border: $border-radius;
+        }
+        a{
+        text-decoration: none;
+        color: $accent-color;
+        padding: 10px 10px;
+        width: 100px;
+        height: 100px;
+        padding: 2px 2px;
+        }
+        &:active{
+        background-color:#1f1f31;
+        color:$text-color;
+        }
+        &:hover{
+        background-color:#7676aa;
+        cursor: pointer;                
+        }
+        }
+        }
+        }
+
+        /* Tablet (max-width: 1024px) */
+        @media (max-width: 1024px) {
+        .headoutbox {
+        height: 80px;
+        padding: 0 15px;
+        }
+
+        .logo {
+        width: 60px;
+        height: 60px;
+        margin-left: 30px;
+        }
+
+        .topLogo {
+        width: 25%;
+        font-size: 24px;
+        line-height: 80px;
+        }
+
+        .message {
+        width: 65%;
+        font-size: 24px;
+        margin-right: 60px;
+        }
+
+        .Nav {
+        height: 80px;
+
+        ul {
+        font-size: 24px;
+        margin-left: 30px;
+        margin-right: 30px;
+
+        li {
+        margin-right: 30px;
+
+        a {
+        width: 80px;
+        height: 80px;
+        padding: 8px;
+        }
+        }
+        }
+        }
+        }
+
+        /* Mobile (max-width: 768px) */
+        @media (max-width: 768px) {
+        .headoutbox {
+        height: 60px;
+        padding: 0 10px;        
+        }
+
+        .logo {
+        width: 40px;
+        height: 40px;
+        margin-left: 30px;
+        }
+
+        .topLogo {
+        width: 90%;
+        font-size: 20px;
+        line-height: 60px;
+        }
+
+        .message {
+        display: none;        
+        width: 70%;
+        font-size: 20px;
+        margin-right: 20px;
+        }
+
+        .Nav {
+        height: 60px;       
+        ul {
+        font-size: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+
+        li {
+        display: none;
+        margin-right: 15px;
+
+        a {
+        width: 60px;
+        height: 60px;
+        padding: 6px;
+        }
+        }
+        }
+        }
+        }

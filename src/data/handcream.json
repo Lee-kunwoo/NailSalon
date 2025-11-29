@@ -1,0 +1,6 @@
+[
+    {"id" : 1, "name": "HENNA", "price": 3100, "img" :"cuticle.png"},
+    {"id" : 2, "name": "선샤인큐티클오일", "price": 10000, "img" :"cuticle_sunshine.jpg"}, 
+    {"id" : 3, "name": "셀리 큐티클 오일", "price": 38900, "img" :"cuticleoil.webp"},
+    {"id" : 4, "name": "카렌큐티클오일", "price": 30000, "img" :"cuticle_karen.webp"} 
+]

@@ -1,0 +1,63 @@
+/* pages.scss 최종 수정 버전 (Footer 문제 해결) */
+
+.page {
+    /* [수정] height: 100vh; 대신 height: auto; 사용 */
+    width: 100vw;
+    height: auto; /* <--- 이 부분을 auto로 변경하거나 제거해야 Footer가 정상 작동합니다. */
+    background-color: rgb(80, 76, 133); 
+    margin-bottom: 0;
+    
+    h1 {
+        text-align: center;
+        font-size: 50px;
+        font-weight: bold;
+        margin: 0;
+        padding-top: 20px;
+        color: white;
+    }
+    
+    /* 가로 4열 레이아웃 */
+    .outBox {
+        margin: 50px auto;
+        width: 90%; 
+        max-width: 1200px;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center; 
+        gap: 30px;
+
+        .inBox {
+            text-align: center;
+            background-color: white;
+            border-radius: 5px;
+            width: calc(25% - 22.5px); /* 4열 배치 */
+            min-width: 220px; 
+            height: 400px; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            
+            img {
+                max-width: 90%; 
+                height: auto;
+                max-height: 250px;
+                object-fit: contain; 
+                padding: 10px;
+            }
+            
+            h3 {
+                font-size: 20px;
+                margin: 10px 0 5px 0;
+            }
+            h2 {
+                font-size: 25px;
+                color: #504C85; 
+                font-weight: bold;
+            }
+        }
+    }
+}
+/* ... @media 쿼리 유지 ... */

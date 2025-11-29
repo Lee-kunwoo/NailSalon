@@ -1,0 +1,93 @@
+/* Footer 스타일 */
+footer {
+    width: 100%;
+    height: 400px;
+    margin-top: 0;
+    background-image: linear-gradient(225deg, #0e00ff, #a5d8fc);
+    /* [최종 수정] 문서 흐름을 따르도록 position: static; 강제 적용 */
+    position: static; 
+    color: #f4f3f7;
+    font-weight: bold;
+    font-family: 'Batang';
+    margin-bottom: 0;
+    
+    /* 콘텐츠 중앙 정렬을 위한 Flexbox 추가 */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.fobox {
+    width: 75%;
+    height: 100%;
+    /* [제거] position, left, transform 속성 모두 제거하여 충돌 방지 */
+    /* position: relative; left: 50%; transform: translateX(-50%); 제거 */
+    
+    /* [수정] 표준 중앙 정렬 (부모 footer가 flex로 정렬하므로 필요 없음) */
+    margin: 0 auto; 
+    align-content: center;
+    margin-top: 0;
+}
+
+.fotxt {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    /* position: relative; 제거 */
+}
+
+.fotxt > div {
+    width: 15%;
+}
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    footer {
+        height: 300px;
+        font-size: 0.9em;
+    }
+
+    .fobox {
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    .fotxt {
+        height: 35px;
+    }
+
+    .fotxt > div {
+        width: 20%;
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    footer {
+        height: 250px;
+        font-size: 0.8em;
+        margin-top: 0;
+    }
+
+    .fobox {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .fotxt {
+        /* [재조정] 모바일에서 중앙 정렬 */
+        width: 90%; 
+        height: 30px;
+        margin: 0 auto; /* 중앙 정렬 */
+        white-space: nowrap; 
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    
+    .foad{
+        font-size: 10px; 
+        margin-bottom: 70px;
+        margin-left: 40px; 
+        line-height: 2; 
+    }
+}

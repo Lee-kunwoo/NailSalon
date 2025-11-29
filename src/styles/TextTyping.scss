@@ -1,0 +1,79 @@
+/* TextTyping */
+#TextoutBox {
+    /* 가급적 width: 100%; 로 사용하고, 필요하다면 max-width: 100vw; 등을 병행 */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* 모바일에서 높이가 강제 지정될 경우 깨질 수 있으므로, min-height로 조절하거나 상황에 따라 조정 */
+    min-height: 500px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+  
+  .text {
+    position: relative;
+    /* inline 요소 위에서 정확히 겹치도록 하고 싶다면 
+       .text 자체를 inline-block 등으로 바꿔보는 것도 방법 */
+  }
+  
+  .text span {
+    /* 기본 글자(회색 부분) */
+    display: block;
+    color: rgba(128, 128, 128, 0.3);
+    font-size: 50px;
+    font-weight: bolder;
+    /* 글자가 줄바꿈 없이 한 줄에 고정되도록 */
+    white-space: nowrap; 
+    /* 필요하다면 overflow: hidden; 유지 가능 */
+    overflow: hidden;
+  }
+  
+  .text p {
+    /* 타이핑되는 글자(핑크 부분) */
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    color: #FF4081;
+    font-size: 50px;
+    font-weight: bolder;
+    /* span과 동일하게 white-space를 맞춰주면 줄바꿈 계산이 어긋날 확률이 줄어듭니다.
+       기존에 `pre`를 사용했다면, span에도 똑같이 `pre`를 적용해 주는 방법도 있습니다. */
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    transition: width 0.5s ease-in-out;
+  }
+  
+  /* Tablet (max-width: 1024px) */
+  @media (max-width: 1024px) {
+    #TextoutBox {
+      min-height: 400px;
+      margin-top: 40px;
+    }
+  
+    .text span,
+    .text p {
+      font-size: 40px;
+    }
+  }
+  
+  /* Mobile (max-width: 768px) */
+  @media (max-width: 768px) {
+    #TextoutBox {
+      min-height: 300px; /* 너무 크게 잡으면 글자가 위아래로 쏠릴 수 있으니 조정해보세요 */
+      margin-top: 50px;    
+      margin-bottom: 30px;
+    }
+  
+    .text span,
+    .text p {
+      font-size: 20px; 
+     
+      text-align: center;
+
+    }
+  }
+  

@@ -1,0 +1,10 @@
+# Git 관리에서 제외할 폴더 및 파일 목록
+# Node.js 관련
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# 빌드 및 배포 폴더
+/build
+/dist
+/docs  # gh-pages 배포 시 사용되는 폴더일 수 있으나, 일반적으로 제외

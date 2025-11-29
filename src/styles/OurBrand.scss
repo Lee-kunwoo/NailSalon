@@ -1,0 +1,135 @@
+/* OUR BRAND 영역 */
+#our_brand {
+    width: 100%;
+    /* 높이: 고정 대신 내용물에 맞게 auto로 변경 */
+    height: auto;
+    margin-top: 0;
+    background: #1e1e33;
+    color: #FF4081;
+    padding: 100px 0;
+    font-family: 'Poppins', sans-serif;
+    /* 섹션 간 간격 조정 */
+    margin-bottom: 100px; 
+}
+
+#our_brand section h2 {
+    max-width: 1200px;
+    /* 중앙 정렬 */
+    margin: 0 auto 60px; 
+    font-size: 4.5rem;
+    line-height: 130%;
+    /* 텍스트 중앙 정렬 */
+    text-align: center; 
+}
+
+/* 카드들을 감싸는 컨테이너 */
+#our_brand > section > div {
+    max-width: 1200px; /* 카드 컨테이너 최대 너비를 1200px로 통일 */
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;
+    margin: 0 auto; 
+    flex-wrap: wrap; /* 4개 카드가 넘어가지 않도록 wrap 설정 */
+}
+
+/* 개별 카드 */
+#our_brand > section > div section {
+    /* 4열 배치: 전체 너비 25%에서 gap 40px을 빼서 계산 */
+    width: calc(25% - 40px); 
+    min-width: 200px; 
+    background: #FF4081;
+    position: relative;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 10px; /* 좌우 마진 조정 */
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+#our_brand > section > div section:hover {
+    transform: scale(1.05);
+}
+
+/* active 클래스: 애니메이션 단순화 */
+#our_brand > section > div.active section {
+    animation: none; 
+}
+
+/* 카드 이미지 */
+#our_brand > section > div img {
+    display: block;
+    position: relative;
+    width: 100%; 
+    max-width: 200px; 
+    height: auto;
+    margin: 20px auto; 
+    transition: transform 1s;
+    border-radius: 10px;
+}
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    #our_brand {
+        height: auto;
+        padding: 80px 0;
+        margin-bottom: 200px;
+    }
+    #our_brand section h2 {
+        /* [수정] 태블릿에서 텍스트 크기 조정 */
+        font-size: 3.5rem; 
+        margin-bottom: 40px;
+    }
+    #our_brand > section > div {
+        max-width: 700px; 
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #our_brand > section > div section {
+        /* 2열 배치 */
+        width: calc(50% - 20px); 
+        padding: 80px 20px 30px;
+        margin: 10px;
+    }
+    #our_brand h3 {
+        font-size: 2rem;
+    }
+    #our_brand > section > div img {
+        width: 100px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    #our_brand {
+        height: auto;
+        padding: 60px 0;
+        margin-bottom: 150px;
+    }
+    #our_brand section h2 {
+        /* [수정] Mobile 텍스트 크기를 대폭 줄여 한 줄 표시 */
+        font-size: 1.8rem; 
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    #our_brand > section > div {
+        flex-direction: column;
+        align-items: center;
+    }
+    #our_brand > section > div section {
+        /* 1열 배치 */
+        width: 90%; 
+        max-width: 350px;
+        padding: 60px 15px 20px;
+        margin: 10px 0;
+    }
+    #our_brand h3 {
+        font-size: 1.8rem;
+    }
+    #our_brand > section > div img {
+        width: 300px;
+        height: auto;
+        margin-bottom: 15px;
+    }
+}
