@@ -2,7 +2,7 @@
   "name": "nailmall",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Lee-kunwoo.github.io/nail-shop/",
+  "homepage": "https://lee-kunwoo.github.io/SalonLocation/",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
