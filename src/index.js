@@ -5,7 +5,10 @@ import App from './App';
 
 const root = createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter basename="/NailSalon">
+  // ----------------------------------------------------------------
+  // [수정] 로컬 테스트를 위해 basename 속성을 제거합니다.
+  <BrowserRouter>
     <App />
   </BrowserRouter>
+  // ----------------------------------------------------------------
 );
